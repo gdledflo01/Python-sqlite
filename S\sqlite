@@ -1,0 +1,15 @@
+import sqlite3
+
+con = sqlite3.connect(r"C:\Users\50000874\OneDrive - embecta\Desktop\My\Power BI\materials-power-bi-python\System_Information.db")
+cur = con.cursor()
+
+#con.execute("CREATE TABLE Performance(time datetime, cpu_usage integer, memory_usage integer, cpu_interrupts interger, cpu_calls interger, memory_used interger, memory_free interger, bytes_sent interger, bytes_receives interger, disk_usage interger)")
+#con.execute("drop table Performance")
+# con.execute("delete from Performance")
+# con.commit()
+
+for row in cur.execute("SELECT * FROM Performance"):
+    print(row)
+con.close()
+
+print("Data Inserted Successfully !")
